@@ -6,15 +6,16 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 router.post("/register", async (req,res)=>{
-    const { username,password }=req.body;
+    const { username,password,age,email}=req.body;
     const userExist= await User.findOne({username});
     if(userExist){
         return res.status(402).json({message:"User already Exists"})
     }
     const hashedPassword = await bcrypt.hash(password,10);
-    const newUser = new User({username , password:hashedPassword})
+    const newUser = new User({username , password:hashedPassword,age,email})
     await newUser.save()
     res.status(201).json({message:"User Registered Successfully!"}, user_id=newUser._id)
+    console.log("hi")
     
 });
 

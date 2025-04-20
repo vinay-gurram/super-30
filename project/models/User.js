@@ -4,7 +4,7 @@ const userSchema = new mongooes.Schema ({
     username:{
         type:String,
         required:true,
-        uniqe:true
+        unique:true
     },
     password:{
         type:String,
@@ -13,12 +13,13 @@ const userSchema = new mongooes.Schema ({
 
     email:{
         type:String,
-        required:true,
-        uniqe:true
+        
+        unique:true
     },
     age:{
         type:Number,
-        required:true   
+        required:true
+        
     },
     createdAt:{
         type:Date,

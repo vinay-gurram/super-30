@@ -18,6 +18,6 @@ mongoose
 
 app.use("/api",authRoutes)
 
-app.listen(5000,()=>{
-    console.log("Server is running successfully at port 5000")
+app.listen(5010,()=>{
+    console.log("Server is running successfully at port 5010")
 })
